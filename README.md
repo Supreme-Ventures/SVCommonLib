@@ -19,7 +19,6 @@ We've had some general inquiries into what SVCommonsLib actually does, why we us
     - [Configurable theme & styling.](https://docs.supremeventures.ca/important-information/configuration-options/commons-config)
 - Configuration Files
     - Create & manage config-as-code files
-    - Refactor & reorganize config files in editor
     - Automatic file generation
     - Automatic config updates
     - Automatic config validation
