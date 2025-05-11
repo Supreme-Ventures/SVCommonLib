@@ -1,0 +1,91 @@
+# Commons General Features List
+We've had some general inquiries into what SVCommonsLib actually does, why we use it, and its features. I've outlined some examples, its features, and why it might be a good use-case for some. You should **not be using SVCommonsLib in your projects**! This is not documentation, or source code for SVCommonsLib. It is simply sales material, nothing more. It is non-functional, and is not an actual plugin.
+## General Feature Set
+- Commands Framework
+    - Commands & Command Tree Structures
+    - Managed Arguments
+        - Required arguments, automatic fail messages & validation
+        - Optional arguments, default values, automatic fail messages & validation
+        - Default Arguments included (tab completes, validators, etc)
+            - Bukkit: `Entity`, `Material`, `Player`, `Sound`, `World`
+            - Custom: `PlayerMarit`, `Positive` `Integer`, `Timestamp`
+            - Generic: `Boolean`, `Double`, `Integer`, `Long`, `String`, `UUID`
+    - Command Requirements
+        - Permissions
+        - Console Only
+        - Player Only
+    - Automatic Help Message (Paginated)
+    - Built-in Tab Completing & Argument Completing
+    - [Configurable theme & styling.](https://docs.supremeventures.ca/important-information/configuration-options/commons-config)
+- Configuration Files
+    - Create & manage config-as-code files
+    - Refactor & reorganize config files in editor
+    - Automatic file generation
+    - Automatic config updates
+    - Automatic config validation
+    - Type serializers & adapters
+- Menu Framework
+    - Static/Simple Menus
+    - Dynamic & Auto-Updating Menus
+    - Menu Action Items
+        - Fail action displays
+        - Automatic updating
+        - Click mapped actions (click, shift-click, right-click)
+    - Paginated Menus
+        - Generate pages automatically
+        - Forward & backward buttons
+        - Self-managed state
+- [DataSets (Cereal)](https://docs.supremeventures.ca/important-information/configuration-options/database-engine)
+    - Support for MongoDB, JSON File, SQL Databases types
+    - Data "Profiles" bound to players & mapped when logging in/out
+    - Data "Objects" - Faction, Guild, Clan, Generator, etc.
+    - Automatic serialization & deserialization
+    - Thread-safe data access
+    - Async fetch & save operations
+    - Shared data source (1 connection pool, instead of 1 pool per plugin)
+- Utilities
+    - Strings
+        - `Placeholder` object, replace & replaceAll
+        - Correct string capitalization
+        - Format as Roman Numerals
+        - Generate progress bars
+    - Numbers
+        - try-parse numbers & defaults
+        - Format comma-separated numbers (`100,000,000,000`)
+        - Format suffixed numbers (`100B`, `1.5T`)
+        - Number rounding
+    - Time
+        - Formatted time till & ago (`1h, 2m, 3s`)
+        - Argument type "time" amount parsing
+        - Get current day, year, month, end of month timestamp, etc.
+    - UUID
+        - Generate time series UUID's
+        - [Generate/Parse UUID's faster](https://hypixel.net/threads/dev-blog-6-keeping-up-with-the-masses.2251554/)
+    - Bin Paster - Upload files to [https://bin.supremeventures.ca](https://bin.supremeventures.ca)
+    - [Pixel-Head Caching & Parsing](https://gyazo.com/a16801ad740274d6c0268e16c40baa80)
+    - Chat-Input interceptor
+        - Prompt a question, and wait for players to reply in chat.
+        - Supports timeouts, and auto-cancellation, retrys, and more.
+    - Leaderboards
+        - Generate leaderboards automatically from datasets
+        - Optimized database lookups
+        - Menu based & Chat based styles
+    - Messaging & Text Formating (In-Game)
+        - [Custom Adventure formating codes](https://docs.supremeventures.ca/important-information/configuration-options/custom-styling) *(can be used in lore, messages, display names etc)*
+            - `<centered>` - Automatically centers a line in chat (based on max-chat width)
+            - `<legacy:&c>` - Converts legacy color codes to adventure format
+            - `<progressbar:100:100>` - Generates a progress bar based on the percentage"
+            - `block-font:"example"` - Generates a block font string "ᴇxᴀᴍᴘʟᴇ"
+            - `<percentage:87:100:"<green>Complete">` - Generates a percentage string "87%"
+            - `<roman:7>` - Generates a roman numeral string "VII"
+        - [Easy to implement, highly configurable messages](https://docs.supremeventures.ca/important-information/configuration-options/message-formats)
+            - Allow sending `ACTION_BAR`, `TITLE`, `CHAT`, or `DISABLE` messages channels.
+            - Full color support, click events, hover and more.
+            - Play sounds when sending messages.
+- [Documentation Generation (Built-in to the code)](https://bin.supremeventures.ca/esebozoqun.ini)
+    - Auto-Generates permission lists
+    - Auto-Generates command map, permissions required, usage, & arguments
+    - Auto-Generates config files
+    - Dump all to a file for easy use & sharing in TOML format
+- Velocity Hook
+    - Utilize & initialize commons on Velocity out of the box
